@@ -86,34 +86,38 @@ export default defineType({
           title: 'Header Section',
           fields: [
             {
-              name: 'sectionTitles',
+              name: 'sectionName',
+              type: 'string',
+              title: 'Section Name',
+            },
+            {
+              name: 'sections',
               type: 'array',
-              title: 'Section Titles',
+              title: 'Sections',
               of: [
                 {
-                  name : 'section',
-                  type : 'object' ,
-                  fields : [
-
-
-                
-                {
-                  name : 'title',
-                  type: 'string',
-                  title: 'Title',
+                  type: 'object',
+                  title: 'Section',
+                  fields: [
+                    {
+                      name: 'title',
+                      type: 'string',
+                      title: 'Title',
+                    },
+                    {
+                      name: 'link',
+                      type: 'string',
+                      title: 'URL',
+                    },
+                  ],
                 },
-                {
-                  name : 'Link',
-                  type: 'string',
-                  title: 'Url',
-                }]
-              }
               ],
             },
           ],
         },
       ],
     },
+    
     {
       name: 'heroSections',
       type: 'array',
