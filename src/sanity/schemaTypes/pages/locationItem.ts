@@ -20,7 +20,7 @@ export default {
       {
         name: 'link',
         title: 'Link',
-        type: 'url',
+        type: 'string',
       },
     ],
   };

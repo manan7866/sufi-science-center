@@ -1,7 +1,7 @@
 const sufiStats = {
     name: 'sufiStats',
     title: 'Sufi Statistics',
-    type: 'document',
+    type: 'object',
     fields: [
       {
         name: 'mainTitle',

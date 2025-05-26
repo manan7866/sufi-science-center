@@ -6,26 +6,17 @@ export default {
     type: 'document',
     fields: [
       {
-        name: 'category',
-        title: 'Category Title',
+        name: 'categoryName',
+        title: 'Category Name',
         type: 'string',
         validation: (Rule : Rule) => Rule.required()
-      },
-      {
-        name: 'slug',
-        title: 'Slug',
-        type: 'slug',
-        options: {
-          source: 'title', // title field se slug generate karega
-          maxLength: 96,   // optional: slug ki max length
-        },
-        validation: (Rule: Rule) => Rule.required(),
       },
       
       {
         name: 'description',
         title: 'Category Description',
-        type: 'text'
+        type: 'array',
+        of : [{ type : 'block'}]
       },
       {
         name: 'image',
@@ -40,6 +31,11 @@ export default {
         title: 'Books',
         type: 'array',
         of: [{ type: 'insightCollection' }]
+      },
+      {
+        name : 'matterHeading',
+        title : 'Matter Heading',
+        type : 'string',
       },
       {
         name: 'matters',

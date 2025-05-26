@@ -4,9 +4,19 @@ export default {
     type: 'object',
     fields: [
       {
+        name: 'title',
+        title: 'Title',
+        type: 'string',
+      },
+      {
         name: 'mainHeading',
         title: 'Main Heading',
         type: 'string',
+      },
+      {
+         name : 'slug',
+         title : 'Slug',
+         type : 'slug'
       },
       {
         name: 'mainDescription',

@@ -11,6 +11,11 @@ export default {
         type: 'string',
       },
       {
+        name : 'slug',
+        title : 'Slug',
+        type : 'slug'
+      },
+      {
         name: 'content',
         title: 'Content',
         type: 'array',
@@ -28,7 +33,8 @@ export default {
               {
                 name: 'description',
                 title: 'Description',
-                type: 'text', // ya 'block' agar aapko rich text chahiye
+                type: 'array',
+                of : [{ type : 'block'}]
               },
               {
                 name: 'bottomHeading',
@@ -40,7 +46,11 @@ export default {
                 title : 'Button Field',
                 type : 'array',
                 of : [
-                  {
+                  { name : 'buttonField',
+                    type : 'object',
+                    title : 'Button Field',
+                    fields : [
+                              {
                     name : 'buttonName',
                     title : 'Button Name',
                     type : 'string',
@@ -48,20 +58,19 @@ export default {
                   {
                     name : 'buttonUrl',
                     title : 'Button Url',
-                    type : 'url'
+                    type : 'string'
                   }
+                    ]
+                  }
+
                 ]
 
               },
               {
                 name: 'bottomContent',
                 title: 'Bottom Content',
-                type: 'array',
-                of: [
-                  {
-                    type: 'text', // ya 'block' agar rich text chahiye
-                  },
-                ],
+                type: 'text',
+                
               },
             ],
           },

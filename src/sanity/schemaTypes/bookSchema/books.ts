@@ -40,7 +40,7 @@ export default {
     {
       name : 'slug',
       title: 'Slug',
-      type: 'string',
+      type: 'slug',
     }
   ]
 }

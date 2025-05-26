@@ -58,6 +58,16 @@ export default {
   title: 'Goal Section',
   fields: [
     {
+      name : "slug",
+      title : "Slug",
+      type : "slug"
+    },
+    {
+      name : 'imageText',
+      title : 'Image Text',
+      type : 'string'
+    },
+    {
       name: 'heading',
       type: 'string',
       title: 'Main Heading',
@@ -74,13 +84,22 @@ export default {
     },
     {
       name: 'description',
-      type: 'text',
+      type: 'array',
       title: 'Detailed Description',
+      of : [{type : 'block'}],
     },
     {
       name: 'image',
       type: 'image',
       title: 'Section Image',
+      options: {
+        hotspot: true,
+      },
+    },
+    {
+      name: 'bgImage',
+      type: 'image',
+      title: 'Background Image',
       options: {
         hotspot: true,
       },

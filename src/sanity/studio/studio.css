@@ -1,0 +1,20 @@
+body {
+  background-color: yellow !important;
+}
+/* 
+.sanity-rich-text.data-mark-redText {
+  color: red !important;
+}
+
+.sanity-rich-text.data-mark-greenText {
+  color: green !important;
+} */
+
+[data-mark="greenText"] {
+  color: green !important;
+}
+
+[data-mark="redText"] {
+  color: red !important;
+}
+/* <span data-mark="greenText" class="sc-eJNWfD jkuslg"><strong data-mark="strong" class="sc-eJNWfD jkuslg"><span data-slate-string="true">hghj</span></strong></span> */

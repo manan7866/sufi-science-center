@@ -18,7 +18,7 @@ export default {
       {
         name: 'description',
         title: 'Description',
-        type: 'text', // Use 'block' if you want rich text
+        type: 'text', 
       },
       {
         name: 'subChart',
@@ -38,7 +38,7 @@ export default {
               {
                 name: 'subDescription',
                 title: 'Sub Description',
-                type: 'text', // Use 'block' here if rich text is needed
+                type: 'text', 
               },
             ],
           },

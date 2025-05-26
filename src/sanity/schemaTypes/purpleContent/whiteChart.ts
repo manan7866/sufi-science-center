@@ -4,11 +4,7 @@ export default {
         title: 'White Chart',
         type: 'document',
         fields : [
-          {
-            type: 'object',
-            name: 'bottomChartItem',
-            title: 'Bottom Chart Item',
-            fields: [
+          
               {
                 name: 'title',
                 title: 'Title',
@@ -42,8 +38,8 @@ export default {
                 title : 'Note',
                 type : 'string'
               }
-            ]
-          }
+            
+          
         ]
       
       

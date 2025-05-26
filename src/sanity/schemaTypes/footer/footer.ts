@@ -14,14 +14,11 @@ export default {
       },
       {
         name: 'description',
-        type: 'text',
+        type: 'array',
         title: 'Footer Description',
+        of : [{ type : 'block'}]
       },
-      {
-        name: 'email',
-        type: 'string',
-        title: 'Contact Email',
-      },
+      
       {
         name: 'socialLinks',
         type: 'array',
@@ -44,14 +41,47 @@ export default {
           },
         ],
       },
-      {
-        name: 'sections',
-        type: 'array',
-        title: 'Sections',
-        of: [{ type: 'footerSection' }],
-          
-        
-      },
+    {
+      name: 'footerSections',
+      type: 'array',
+      title: 'Footer Sections',
+      of: [
+        {
+          type: 'object',
+          title: 'Header Section',
+          fields: [
+            {
+              name: 'sectionName',
+              type: 'string',
+              title: 'Section Name',
+            },
+            {
+              name: 'sections',
+              type: 'array',
+              title: 'Sections',
+              of: [
+                {
+                  type: 'object',
+                  title: 'Section',
+                  fields: [
+                    {
+                      name: 'title',
+                      type: 'string',
+                      title: 'Title',
+                    },
+                    {
+                      name: 'slug',
+                      type: 'slug',
+                      title: 'URL',
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
       {
         name: 'footerPolicy',
         title: 'Footer Policy',
@@ -65,7 +95,8 @@ export default {
           {
             name: 'description',
             title: 'Description',
-            type: 'text',
+            type: 'array',
+            of : [{ type : 'block'}]
           },
           {
             name: 'legalLinks',
@@ -83,7 +114,7 @@ export default {
                   {
                     name: 'url',
                     title: 'URL',
-                    type: 'url',
+                    type: 'string',
                   },
                 ],
               },

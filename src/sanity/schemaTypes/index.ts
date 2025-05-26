@@ -17,19 +17,32 @@ import complexContentBlock from './content/complexContentBlock'
 import header from './header/header'
 import footer from './footer/footer'
 import footerSection from './footer/footerSection'
-import teachingAssessment from './teachingAssessment/teachingAssigment'
-import bignnerCheckList from './bignnerCheckList/bignnerCheckList'
-import checklistDescription from './bignnerCheckList/checkListDescription'
+import teachingAssessment from './teachingAssessment/teachingAssignment'
+import checklistDescription from './beginnerChecklist/checkListDescription'
 import purpleContent from './purpleContent/purpleContent'
 import purpleChart from './purpleContent/purpleChart'
 import whiteChart from './purpleContent/whiteChart'
 import registrationForm from './registrationForm/registrationForm'
 import membershipForm from './membershipForm/membershipForm'
-import contentChart from './contactPage/contentCart'
+import contentChart from './contactPage/contentChart'
 import sufiTrans from './contactPage/sufiTrans'
 import supportSection from './contactPage/supportSection'
 import contactSection from './contactPage/contactSection'
 import voucher from './voucher'
+import homepage from './homepage/homepage'
+import heroSections from './heroSections'
+import matterBox from './matterBox'
+import sufiStats from './contactPage/sufiStats'
+import beginnerChecklist from './beginnerChecklist/beginnerChecklist'
+import rightsideImageContent from './rightsideImageContent'
+import productShowcase from './productShowcase'
+import simpleContent from './simpleContent'
+import donateSection from './donateSection'
+import volunteer from './volunteer'
+import whiteContentChart from './whiteContentChart'
+import post from './post'
+import blockContent from './blockContent'
+import aboutContent from './content/aboutContent'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -52,7 +65,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     footer,
     footerSection,
     teachingAssessment,
-    bignnerCheckList,
+    beginnerChecklist,
     checklistDescription,
     purpleContent,
     purpleChart,
@@ -63,8 +76,19 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     sufiTrans,
     supportSection,
     contactSection,
-    voucher
-    
+    voucher,
+    homepage,
+    heroSections,
+    matterBox,
+    sufiStats,
+    rightsideImageContent,
+    productShowcase,
+    simpleContent,
+    donateSection,
+    volunteer,
+    whiteContentChart,
+    post,
+    blockContent,
+    aboutContent
   ],
 }
- 
