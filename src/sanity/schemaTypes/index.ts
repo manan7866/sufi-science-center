@@ -1,5 +1,5 @@
 import { type SchemaTypeDefinition } from 'sanity'
-import handCraftProduct from './handCraftProducts'
+
 import rating from './rating'
 import book from './bookSchema/books'
 import bookPage from './bookSchema/bookPage'
@@ -8,7 +8,7 @@ import section from './insightSchemas/section'
 import insightpage from './insightSchemas/page'
 import category from './insightSchemas/category'
 import matters from './insightSchemas/matters'
-import bookCategory from './bookSchema/bookCategory'
+import digitalBookCategory from './bookSchema/digitalBookCategory'
 import instruction from './instructions'
 import page from './pages/page'
 import goalSection from './pages/goalSection'
@@ -43,10 +43,21 @@ import whiteContentChart from './whiteContentChart'
 import post from './post'
 import blockContent from './blockContent'
 import aboutContent from './content/aboutContent'
+import dpages from './bookSchema/dpages'
+import professionsDetail from './bookSchema/professionsDetail'
+import dailogSeries from './bookSchema/dailogSeries'
+import hardTalk from './bookSchema/hardTalk'
+import inspiringInterview from './bookSchema/inspiringInterview'
+import guideChart from './bookSchema/guideChart'
+import digitalBlock from './bookSchema/digitalBlock'
+import giftShopProduct from './giftShop/giftShopProduct'
+import audioSpectrum from './giftShop/audioSpectrum'
+import handCraft from './giftShop/handCraft'
+import digitalBook from './giftShop/digitalBook'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
-    handCraftProduct,
+    
     rating,
     book,
     bookPage,
@@ -55,7 +66,7 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     insightpage,
     category,
     matters,
-    bookCategory,
+    digitalBookCategory,
     instruction,
     page,
     goalSection,
@@ -89,6 +100,17 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     whiteContentChart,
     post,
     blockContent,
-    aboutContent
+    aboutContent,
+    dpages,
+    professionsDetail,
+    dailogSeries,
+    hardTalk,
+    inspiringInterview,
+    guideChart,
+    digitalBlock,
+    giftShopProduct,
+    audioSpectrum,
+    handCraft,
+    digitalBook
   ],
 }

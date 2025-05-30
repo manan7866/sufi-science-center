@@ -17,4 +17,8 @@ body {
 [data-mark="redText"] {
   color: red !important;
 }
+
+[data-mark="purpleText"] {
+  color: purple !important;
+}
 /* <span data-mark="greenText" class="sc-eJNWfD jkuslg"><strong data-mark="strong" class="sc-eJNWfD jkuslg"><span data-slate-string="true">hghj</span></strong></span> */

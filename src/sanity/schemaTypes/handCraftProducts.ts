@@ -39,8 +39,8 @@ export default {
     {
       name: 'rating',
       title: 'Rating',
-      type: 'reference',
-      to: [{ type: 'rating' }],
+      type: 'array',
+      of : [{ type: 'rating' }],
     },
     {
       name: 'price',

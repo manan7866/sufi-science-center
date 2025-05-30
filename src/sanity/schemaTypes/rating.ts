@@ -17,6 +17,16 @@ export default {
         title: 'Review',
         type: 'text',
         validation: (Rule : Rule) => Rule.max(500),
+      },
+      {
+        name : 'username',
+        title : 'Username',
+        type : 'string'
+      },
+      {
+        name : 'userEmail',
+        title : 'user Email',
+        type : 'string'
       }
     ]
   }
