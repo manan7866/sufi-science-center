@@ -268,11 +268,13 @@ export default function EditableParagraphs({
   sectionIndex,
   subSectionIndex,
   paragraphs,
+  sectionInnerIndex
 }: {
   pageId: string;
   sectionIndex: number;
   subSectionIndex: number;
   paragraphs: any[];
+  sectionInnerIndex : number
 }) {
   const [loading, setLoading] = useState(false);
 
@@ -447,7 +449,7 @@ export default function EditableParagraphs({
   
     const tiptapJson = editor.getJSON();
     const newParagraphs = convertTiptapToSanityBlocks(tiptapJson);
-    const uniqueKey = `paragraphs[0]-${new Date().getTime()}`
+    
   
     try {
       const res = await fetch('/api/update-content', {
@@ -458,7 +460,8 @@ export default function EditableParagraphs({
           sectionIndex,
           subSectionIndex,
           newParagraphs,
-          uniqueKey 
+          sectionInnerIndex
+           
           
         }),
       });
@@ -494,19 +497,19 @@ export default function EditableParagraphs({
         <div className="mb-2 space-x-2">
           <button
             onClick={() => editor.chain().focus().toggleBold().run()}
-            className={`px-2 py-1 rounded ${editor.isActive('bold') ? 'bg-gray-300' : 'bg-gray-100'}`}
+            className={`px-2 py-1 rounded ${editor.isActive('bold') ? 'bg-blue-400' : 'bg-blue-200'}`}
           >
             Bold
           </button>
           <button
             onClick={() => editor.chain().focus().toggleItalic().run()}
-            className={`px-2 py-1 rounded ${editor.isActive('italic') ? 'bg-gray-300' : 'bg-gray-100'}`}
+            className={`px-2 py-1 rounded ${editor.isActive('italic') ? 'bg-blue-400' : 'bg-blue-200'}`}
           >
             Italic
           </button>
           <button
             onClick={() => editor.chain().focus().toggleUnderline().run()}
-            className={`px-2 py-1 rounded ${editor.isActive('underline') ? 'bg-gray-300' : 'bg-gray-100'}`}
+            className={`px-2 py-1 rounded ${editor.isActive('underline') ? 'bg-blue-400' : 'bg-blue-200'}`}
           >
             Underline
           </button>

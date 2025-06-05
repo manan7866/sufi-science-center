@@ -91,9 +91,13 @@ import { useEffect, useState } from 'react';
 import { client } from '@/sanity/lib/client';
 import { PortableText } from '@portabletext/react';
 import EditableParagraphs from '@/components/EditableParagraphs';
+import EditInnerSectionItems from '@/components/EditInnerSectionItems';
 import Image from 'next/image';
 import { urlFor } from '@/sanity/lib/image';
 import { url } from 'node:inspector/promises';
+import { FiEdit3 } from "react-icons/fi";
+import { DiVim } from 'react-icons/di';
+
 
 
 
@@ -111,10 +115,17 @@ export default function OurWorkPage() {
   const [loading, setLoading] = useState(true);
   const [subId ,setSubId] = useState<number | null | any>()
   const [subPara , setSubPara] = useState<any[]>([])
-function handleChange(para , sub : number){
+  const [csId , setCSId] = useState<number | null | any>()
+  const [subHeading , setSubHeading] = useState()
+  const [subNote , setSubNote] = useState()
+  const [subBottomNote , setSubBottomNote] = useState()
+  const [editText , setEditText] = useState(false)
+
+function handleChange(para , sub : number , csId : number){
   console.log("Clicked!", sub);
   setSubId(sub)
   setSubPara(para)
+  setCSId(csId)
 }
   useEffect(() => {
     client.fetch(query).then((data) => {
@@ -156,13 +167,51 @@ function handleChange(para , sub : number){
 
           {section.subSections?.map((sub, subIdx) => (
             <div className='bg-gradient-to-r from-purple-600 to-indigo-600 rounded-4xl text-white text-center py-4' key={subIdx} style={{ paddingLeft: '1rem', borderLeft: '2px solid #ccc', marginTop: '1rem' }}>
-              <h4 className='text-3xl'>{sub.subHeading}</h4>
+              <div className='inline-block gap-3 text-3xl'>
+                {sub.subHeading} 
+                {subHeading && editText && subId == subIdx ? (<div className='inline-block'>
+                  <EditInnerSectionItems 
+                  pageId={page?._id}
+                  sectionIndex={2}
+                  subSectionIndex={subId}
+                  sectionInnerIndex={csId}
+                  subHeading={subHeading}
+                  
+
+                  />
+                </div>): (<div className='inline-block'></div>) }
+                <FiEdit3 onClick={()=>{setSubHeading(sub.subHeading);
+                                       setSubId(subIdx);
+                                       setCSId(idx)
+                                       setEditText(!editText)
+                  }} 
+                   className=' my-6 inline-block mx-2  rounded-sm border-[2px] text-2xl border-b-white text-white' />
+                
+                
+                </div>
               
               <p> {sub.note}</p>
 
-              <div onClick={()=> handleChange(sub.paragraphs , subIdx)} className='flex flex-col gap-3'>
+              <div  className='flex items-center flex-col gap-3'>
                 <strong>Paragraphs:</strong>
+                <div onClick={()=>{setEditText(!editText)}} className='w-max my-6  rounded-sm border-[2px] text-2xl border-b-white text-white'>
+                <FiEdit3 onClick={()=> handleChange(sub.paragraphs , subIdx , idx)} />
+                </div>
                 <PortableText   value={sub.paragraphs} />
+               {editText && subId == subIdx ? (<div>
+                {subId !== null && (
+  <div className="mt-2">
+    <strong>Paragraphs:</strong>
+    <EditableParagraphs
+      pageId={page?._id}
+      sectionIndex={2}
+      subSectionIndex={subId}
+      paragraphs={subPara}
+      sectionInnerIndex={csId}
+    />
+  </div>
+)}
+               </div>) : (<div></div>)}
               </div>
 
               <p><em>{sub.bottomNote}</em></p>
@@ -171,17 +220,7 @@ function handleChange(para , sub : number){
         </div>
       ))}
          
-         {subId !== null && (
-  <div className="mt-2">
-    <strong>Paragraphs:</strong>
-    <EditableParagraphs
-      pageId={page?._id}
-      sectionIndex={2}
-      subSectionIndex={subId}
-      paragraphs={subPara}
-    />
-  </div>
-)}
+
 
     </div>
  

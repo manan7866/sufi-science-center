@@ -140,12 +140,8 @@ export default {
     {
       name: 'locations',
       title: 'Locations',
-      type: 'array',
-      of: [
-        {
-          type : 'locationItem'
-        }
-      ],
+      type: 'locationItem',
+      
       
     },
   ],
